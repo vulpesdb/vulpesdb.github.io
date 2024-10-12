@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon and Text Positioning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #540414;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .icon {
+            position: absolute;
+            left: 50%;
+            top: 272.9px;
+            transform: translateX(-50%);
+            width: 247.1px;
+            height: 247.1px;
+            border: 7.4px solid white;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .text {
+            position: absolute;
+            left: 50%;
+            top: 547.4px; /* 272.9px + 247.1px + 7.4px + 20px */
+            transform: translateX(-50%);
+            width: 1135.9px;
+            height: 71.7px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 48px; /* Adjust as needed to fit the height */
+            color: white;
+            text-align: center;
+            line-height: 71.7px; /* Vertically center the text */
+        }
+    </style>
+</head>
+<body>
+    <img src="https://vulpesdb.github.io/icon.png" alt="Icon" class="icon">
+    <div class="text">Elevate Your Discord Experience</div>
+</body>
+</html>
