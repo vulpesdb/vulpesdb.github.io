@@ -8,7 +8,8 @@ Name: "Vulpes"
 
 Description: Vulpes is a powerful discord bot made to enhance user's experience on the platform (discord) [Vulpes - Better Discord Commands]. It offers a wide variety of commands, including fun commands, entertaining commands, and mini-game commands, all seamlessly integrated within Discord.
 
-Version: v1 [beta]
+Version: v1
+Previous Versions: Exco (v1 ended in 2022), Chatto (v6.7.5 ended in 2023), Radars (v1 beta ended in 2023), Vulpes Music (v2.2.3 ended in 2024), Vulpes (v1 beta) 
 
 ----------------------------------------
 
