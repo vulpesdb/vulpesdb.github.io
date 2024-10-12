@@ -63,4 +63,5 @@ Support Server:
 
 ----------------------------------------
 
+- Written by luxpog
 Made by luxpog with discord.py and 💝
