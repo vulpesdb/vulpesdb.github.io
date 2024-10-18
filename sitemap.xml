@@ -5,21 +5,21 @@
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
-    <loc>https://vulpesdb.github.io/</loc>
+    <loc>https://vulpesy.vercel.app/</loc>
     <lastmod>2024-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>https://vulpesdb.github.io/info.txt</loc>
+    <loc>https://vulpesy.vercel.app/info.txt</loc>
     <lastmod>2024-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vulpesdb.github.io/robots.txt</loc>
+    <loc>https://vulpesy.vercel.app/robots.txt</loc>
     <lastmod>2024-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
