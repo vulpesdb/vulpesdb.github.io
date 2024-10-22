@@ -1,47 +1,171 @@
+site is still under development!
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Vulpes - Better Discord Commands</title>
-  <link rel="icon" href="/icon32.png">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Supercharge Your Discord Experience For Free!">
-  <meta name="keywords" content="Vulpes, Discord Bot, Discord Bots, Vulpes Bot, Discord, Vulpes Top">
-  <meta name="author" content="Vulpes Management Team">
-  <meta name="about-vulpes-file" content="info.txt">
-  <meta name="theme-color" content="#FFFFFF">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Vulpes Discord bot">
-  <meta property="og:description" content="Supercharge Your Discord Experience!">
-  <meta property="og:url" content="https://vulpesy.vercel.app">
-  <style>
-  body { background-color: #131314; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; color: #fff; font-family: Lato, sans-serif; position: relative } h1 { font-size: 2.5em; font-weight: 700; margin-bottom: .2em; opacity: 0; transform: translateY(-20px); animation: fadeInUp .6s forwards .3s } p { font-size: 1.5em; font-weight: 400; text-align: center; margin-top: 0; margin-bottom: .5em; opacity: 0; transform: translateY(-20px); animation: fadeInUp .6s forwards .4s } button { background-color: transparent; border: 2px solid #fff; color: #fff; font-size: 1.2em; padding: 10px 20px; cursor: pointer; margin-top: 0; border-radius: 50px; transition: background-color .3s, color .3s; font-family: Lato, sans-serif; opacity: 0; transform: translateY(20px); animation: fadeInUp .6s forwards .5s } button:hover { background-color: #fff; color: #131314 } .box { width: 895px; height: 526px; background-color: #1e1f20; border-radius: 58px; margin-top: 20px; position: relative; opacity: 0; transform: translateY(20px); animation: fadeInUp .6s forwards .6s } .box-text { width: 510px; height: 33px; color: #fff; font-family: Lato, sans-serif; font-weight: 700; font-size: 24px; text-align: center; line-height: 36px; position: absolute; top: 6px; left: 50%; transform: translateX(-50%) } .box-image { width: 847px; height: 454px; position: absolute; top: 51px; left: 50%; transform: translateX(-50%); border-radius: 50px; overflow: hidden } .box-image img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none } @keyframes fadeInUp { to { opacity: 1; transform: translateY(0) } } .footer { position: absolute; bottom: 20px; text-align: center; width: 100%; font-family: Lato, sans-serif; font-weight: 400 } .footer a { color: #fff; text-decoration: none; position: relative; overflow: hidden } .footer a:after { content: ''; position: absolute; left: 50%; bottom: -5px; width: 100%; height: 2px; background: #fff; transform: translateX(-50%) scaleX(0); transition: transform .3s ease; border-radius: 50px } .footer a:hover:after { transform: translateX(-50%) scaleX(1) } @media (max-width:600px) { .footer { position: relative; bottom: auto; margin-top: 20px } }
-  
-  </style>
-  
-  <script>
-   function openPopup() {
-    window.open("https://vulpesy.vercel.app/installcd.html", "Install Vulpes", "width=500,height=700");
-   }
-   const year = new Date().getFullYear();
-  </script>
- 
- </head>
- 
- <body>
-  <h1>Introducing Vulpes</h1>
-  <p>Supercharge Your Discord Experience with Better Commands</p>
-  <button onclick="openPopup()">Install</button>
-  <div class="box">
-   <div class="box-text">Shazam - Instant Song Discovery</div>
-   <div class="box-image">
-    <img src="https://i.ibb.co/g7zxFZm/image-2024-10-19-075141539.png" alt="/shazam command showcase" draggable="false">
-   </div>
-  </div>
-  <div class="footer">©️ <script>
-    document.write(year)
-   </script> <a href="https://github.com/vulpesdb" target="_blank">Vulpes Management Team</a>. All rights reserved.
-  </div>
- </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulpes - Better Discord Commands</title>
+    <link rel="icon" type="image/png" href="https://vulpesdb.github.io/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #131314;
+        }
+        
+        .heading {
+            position: absolute;
+            top: 125.3px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            width: 1344.2px;
+            height: 74px;
+            text-align: center;
+            font-size: 62px;
+            color: white;
+        }
+
+        .subheading {
+            position: absolute;
+            top: 199.3px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            width: 1704px;
+            height: 38.1px;
+            text-align: center;
+            font-size: 32px;
+            color: white;
+        }
+
+        .feature-image {
+            position: absolute;
+            top: 254.6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1007px;
+            height: 540.1px;
+            object-fit: cover;
+            border-radius: 37.8px;
+            border: 3.2px solid white;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.03, 0.98, 0.52, 0.99),
+                        box-shadow 0.8s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+            will-change: transform;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+        }
+
+        .feature-image.glowing {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .install-button {
+            position: absolute;
+            top: 821.8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 123.2px;
+            height: 36.7px;
+            border: 2.8px solid white;
+            background: transparent;
+            border-radius: 18.35px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .install-button:hover {
+            transform: translateX(-50%) scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .install-text {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            width: 123.2px;
+            height: 36.7px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">Supercharge Your Discord Experience</div>
+    <div class="subheading">A multipurpose all-in-one bot, enhancing Your Discord Experience With user-focused Commands</div>
+    <img src="https://i.ibb.co/N7kfP8D/image-2024-10-22-235337452.png" alt="Feature Image" class="feature-image" draggable="false" oncontextmenu="return false;">
+
+    <div class="install-button" onclick="openInstallPopup()">
+        <div class="install-text">Install</div>
+    </div>
+
+    <script>
+        // Popup window function
+        function openInstallPopup() {
+            const width = 500;
+            const height = 700;
+            const left = (window.screen.width - width) / 2;
+            const top = (window.screen.height - height) / 2;
+            
+            window.open('https://vulpesy.vercel.app/installcd.html', 'InstallWindow',
+                `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`);
+        }
+
+        const image = document.querySelector('.feature-image');
+        let isMoving = false;
+        let currentX = 0;
+        let currentY = 0;
+        let targetX = 0;
+        let targetY = 0;
+
+        function lerp(start, end, factor) {
+            return start + (end - start) * factor;
+        }
+
+        function animate() {
+            if (isMoving) {
+                currentX = lerp(currentX, targetX, 0.1);
+                currentY = lerp(currentY, targetY, 0.1);
+                image.classList.add('glowing');
+            } else {
+                currentX = lerp(currentX, 0, 0.1);
+                currentY = lerp(currentY, 0, 0.1);
+                if (Math.abs(currentX) < 0.01 && Math.abs(currentY) < 0.01) {
+                    image.classList.remove('glowing');
+                }
+            }
+
+            image.style.transform = `translateX(-50%) perspective(1000px) rotateX(${currentY}deg) rotateY(${currentX}deg)`;
+            requestAnimationFrame(animate);
+        }
+
+        image.addEventListener('mousemove', (e) => {
+            isMoving = true;
+            const { left, top, width, height } = image.getBoundingClientRect();
+            const x = (e.clientX - left) / width;
+            const y = (e.clientY - top) / height;
+            
+            targetX = (x - 0.5) * -20;
+            targetY = (y - 0.5) * 20;
+        });
+        
+        image.addEventListener('mouseleave', () => {
+            isMoving = false;
+        });
+
+        animate();
+    </script>
+</body>
 </html>
