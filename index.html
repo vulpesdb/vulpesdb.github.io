@@ -224,6 +224,42 @@
             font-weight: bold;
             margin-top: 10px;
         }
+        .flex img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .flex img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+        .magic-wand-btn {
+        background: linear-gradient(145deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+        border: 2px solid rgba(255,255,255,0.3);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(255,255,255,0.2);
+        animation: magicGlow 2s infinite alternate;
+        }
+
+        .magic-wand-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        .magic-wand-btn i {
+            font-size: 1.2em;
+            color: white;
+        }
+
+        @keyframes magicGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(255,255,255,0.2);
+            }
+            100% {
+                box-shadow: 0 0 25px rgba(255,255,255,0.5);
+            }
+        }
     </style>
 </head>
 <body class="flex flex-col items-center min-h-screen text-white pt-16 px-4">
@@ -263,7 +299,47 @@
             <source src="https://vulpesdb.github.io/data/videos/vhKP2r4.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <div class="feature-label flex items-center gap-2">
+            <i class="fas fa-image"></i> Image Generator
+        </div>
+        <div class="text-center mt-2 text-2xl font-bold">
+            Made with Vulpes
+        </div>
+        <div class="flex justify-center space-x-4 mt-4">
+            <img src="https://vulpesdb.github.io/data/images/3150/1.webp" alt="Generated Image 1" class="w-[269px] h-[269px] object-cover rounded-lg">
+            <img src="https://vulpesdb.github.io/data/images/3150/2.webp" alt="Generated Image 2" class="w-[269px] h-[269px] object-cover rounded-lg">
+            <img src="https://vulpesdb.github.io/data/images/3150/3.webp" alt="Generated Image 3" class="w-[269px] h-[269px] object-cover rounded-lg">
+            <img src="https://vulpesdb.github.io/data/images/3150/4.webp" alt="Generated Image 4" class="w-[269px] h-[269px] object-cover rounded-lg">
+            <img src="https://vulpesdb.github.io/data/images/3150/5.webp" alt="Generated Image 5" class="w-[269px] h-[269px] object-cover rounded-lg">
+        </div>
+        <div class="text-center mt-[3px] text-gray-500 text-sm">
+            With FLUX.1-schnell Module
+        </div>
+        <div class="text-center mt-4">
+            <button onclick="openMagicWandLink()" class="magic-wand-btn flex items-center justify-center gap-2 mx-auto px-4 py-2 rounded-full text-white font-semibold">
+                <i class="fas fa-magic"></i> Make Your Own
+            </button>
+        </div>
+        <div class="text-center mt-8">
+            <h2 class="text-5xl font-bold text-white">
+                Let's Start Improving Your Discord Experience
+            </h2>
+            <div class="flex justify-center space-x-4 mt-4">
+                <button onclick="window.open('/installcd', '_blank')" class="authorize-btn text-white px-6 py-2 rounded-full font-semibold text-sm">
+                    <i class="fas fa-user-plus"></i> Authorize
+                </button>
+                <button onclick="window.open('/invite', '_blank')" class="authorize-btn text-white px-6 py-2 rounded-full font-semibold text-sm">
+                    <i class="fas fa-plus"></i> Invite
+                </button>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function openMagicWandLink() {
+            window.open('https://discord.com/oauth2/authorize?client_id=1207724790635561001', '_blank');
+        }
+    </script>
 
     <script>
         function openAuthorizationWindow() {
