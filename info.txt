@@ -13,20 +13,6 @@ Previous Versions: Exco (v1 ended in 2022), Chatto (v6.7.5 ended in 2023), Radar
 
 ----------------------------------------
 
-Plans (Subscriptions):
-- Basic:
- - Access to basic commands
- - 24/7 Runtime
-- Vulpes Plus:
- - Everything in Basic Plan
- - Access to Server Commands
- - Access to Faster APIs & AI features/paid APIs
- - Access to AutoMod Commands
- - Access to Real-Time Anti Server Raid Feature(s)
- - Regain access to "Vulpes Music" a discontinued music bot
-
-----------------------------------------
-
 Installing Vulpes to Account Instructions:
 1. Go to https://Vulpes.github.io/install or https://discord.com/oauth2/authorize?client_id=1207724790635561001
 2. On Discord Authorise Page Click on "Add to My Apps"
