@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handling Request...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            color: transparent;
+            font-size: 0;
+        }
+    </style>
+    <script>
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                console.log('Copying to clipboard was successful!');
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
+        function decodeBase64AndCopy() {
+            const base64Content = getParameterByName('content');
+            if (base64Content) {
+                const decodedContent = atob(base64Content);
+                copyToClipboard(decodedContent);
+                window.close();
+            } else {
+                console.error('No content parameter found in the URL.');
+            }
+        }
+
+        window.onload = decodeBase64AndCopy;
+    </script>
+</head>
+<body>
+</body>
+</html>
