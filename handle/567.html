@@ -7,30 +7,54 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            display: none;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+        #fallback {
+            text-align: center;
+            display: none;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
         }
     </style>
     <script>
+        function copyContent(content) {
+            navigator.clipboard.writeText(content)
+                .then(() => window.close())
+                .catch(() => {
+                    document.body.style.display = 'flex';
+                    document.getElementById('fallback').style.display = 'block';
+                });
+        }
+
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
             const content = urlParams.get('content');
-
-            try {
-                if (content) {
-                    const decodedContent = atob(content);
-                    navigator.clipboard.writeText(decodedContent)
-                        .then(() => console.log('Content copied to clipboard'))
-                        .catch(err => console.error('Failed to copy:', err));
+            
+            if (content) {
+                try {
+                    copyContent(atob(content));
+                } catch {
+                    document.body.style.display = 'flex';
+                    document.getElementById('fallback').style.display = 'block';
                 }
-            } catch (error) {
-                console.error('Error decoding content:', error);
-            } finally {
+            } else {
                 window.close();
             }
         };
     </script>
 </head>
 <body>
-<!-- Empty body to ensure no visible content -->
+    <div id="fallback">
+        <p>Automatic Copy To Clipboard Failed (Do it Manually):</p>
+        <button onclick="copyContent(atob(new URLSearchParams(window.location.search).get('content')))">Copy to Clipboard</button>
+    </div>
 </body>
 </html>
