@@ -2,71 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handling Request...</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: transparent;
-            color: transparent;
-            font-size: 0;
+            overflow: hidden;
         }
     </style>
     <script>
-        function getParameterByName(name, url = window.location.href) {
-            name = name.replace(/[\[\]]/g, '\\$&');
-            let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const content = urlParams.get('content');
 
-        function copyToClipboard(text) {
-            // Fallback method for copying to clipboard
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            textarea.style.position = 'fixed'; // Prevent scrolling to bottom
-            document.body.appendChild(textarea);
-            textarea.select();
             try {
-                document.execCommand('copy');
-                console.log('Copying to clipboard was successful!');
-            } catch (err) {
-                console.error('Could not copy text: ', err);
+                if (content) {
+                    const decodedContent = atob(content);
+                    navigator.clipboard.writeText(decodedContent)
+                        .then(() => console.log('Content copied to clipboard'))
+                        .catch(err => console.error('Failed to copy:', err));
+                }
+            } catch (error) {
+                console.error('Error decoding content:', error);
             } finally {
-                document.body.removeChild(textarea);
-            }
-        }
-
-        function decodeBase64AndCopy() {
-            const base64Content = getParameterByName('content');
-            if (base64Content) {
-                const decodedContent = atob(base64Content);
-                copyToClipboard(decodedContent);
                 window.close();
-            } else {
-                console.error('No content parameter found in the URL.');
             }
-        }
-
-        // Trigger the copy process on user interaction
-        window.onload = function () {
-            // Add a transparent overlay to capture user interaction
-            const overlay = document.createElement('div');
-            overlay.style.position = 'fixed';
-            overlay.style.top = '0';
-            overlay.style.left = '0';
-            overlay.style.width = '100%';
-            overlay.style.height = '100%';
-            overlay.style.backgroundColor = 'transparent';
-            overlay.style.cursor = 'pointer';
-            overlay.onclick = decodeBase64AndCopy;
-            document.body.appendChild(overlay);
         };
     </script>
 </head>
 <body>
+<!-- Empty body to ensure no visible content -->
 </body>
 </html>
