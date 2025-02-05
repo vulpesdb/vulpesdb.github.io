@@ -7,7 +7,7 @@
         body {
             margin: 0;
             padding: 0;
-            display: none;
+            display: none; /* Initially hidden */
             height: 100vh;
             justify-content: center;
             align-items: center;
@@ -16,7 +16,7 @@
         }
         #fallback {
             text-align: center;
-            display: none;
+            display: none; /* Initially hidden */
         }
         button {
             padding: 10px 20px;
@@ -27,9 +27,13 @@
     <script>
         function copyContent(content) {
             navigator.clipboard.writeText(content)
-                .then(() => window.close())
-                .catch(() => {
-                    document.body.style.display = 'flex';
+                .then(() => {
+                    // Only close if copy is successful
+                    window.close();
+                })
+                .catch((err) => {
+                    console.error("Failed to copy: ", err); // Log the error
+                    document.body.style.display = 'flex'; // Show fallback content
                     document.getElementById('fallback').style.display = 'block';
                 });
         }
@@ -37,16 +41,18 @@
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
             const content = urlParams.get('content');
-            
+
             if (content) {
                 try {
-                    copyContent(atob(content));
-                } catch {
+                    const decodedContent = atob(content);
+                    copyContent(decodedContent);
+                } catch (error) {
+                    console.error("Decoding or Copy error:", error); // Log the error
                     document.body.style.display = 'flex';
                     document.getElementById('fallback').style.display = 'block';
                 }
             } else {
-                window.close();
+                window.close(); // Close if no content
             }
         };
     </script>
