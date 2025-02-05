@@ -2,39 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handling Request...</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            display: none; /* Initially hidden */
             height: 100vh;
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
             background: white;
+            color: black;
         }
-        #fallback {
-            text-align: center;
-            display: none; /* Initially hidden */
+
+        @media (pointer: coarse) {
+            body {
+                background-color: #131314;
+                color: white;
+                display: flex;
+            }
+
+            #mobile-message {
+                text-align: center;
+            }
+
+            #fallback {
+                display: none;
+            }
         }
+
+        @media (pointer: fine) {
+            body {
+                display: none;
+            }
+
+            #fallback {
+                text-align: center;
+                display: none;
+            }
+        }
+
         button {
             padding: 10px 20px;
             margin-top: 10px;
             cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        button:active {
+            box-shadow: 0 0 10px 5px rgba(76, 175, 80, 0.7);
+        }
+
+        #mobile-message, #fallback {
+            display: none;
         }
     </style>
     <script>
         function copyContent(content) {
             navigator.clipboard.writeText(content)
                 .then(() => {
-                    // Only close if copy is successful
                     window.close();
                 })
                 .catch((err) => {
-                    console.error("Failed to copy: ", err); // Log the error
-                    document.body.style.display = 'flex'; // Show fallback content
-                    document.getElementById('fallback').style.display = 'block';
+                    console.error("Failed to copy: ", err);
+                    if (document.getElementById('mobile-message')) {
+                         document.getElementById('mobile-message').style.display = 'block';
+                    } else {
+                        document.getElementById('fallback').style.display = 'block';
+                        document.body.style.display = 'flex';
+                    }
                 });
         }
 
@@ -45,22 +86,43 @@
             if (content) {
                 try {
                     const decodedContent = atob(content);
-                    copyContent(decodedContent);
+
+                    if (window.matchMedia("(pointer: coarse)").matches) {
+                        document.getElementById('mobile-message').style.display = 'block';
+                        document.body.style.display = 'flex';
+                    } else {
+                         copyContent(decodedContent);
+                    }
+
+
                 } catch (error) {
-                    console.error("Decoding or Copy error:", error); // Log the error
-                    document.body.style.display = 'flex';
-                    document.getElementById('fallback').style.display = 'block';
+                    console.error("Decoding or Copy error:", error);
+                    if (document.getElementById('mobile-message')) {
+                         document.getElementById('mobile-message').style.display = 'block';
+                    } else {
+                        document.getElementById('fallback').style.display = 'block';
+                        document.body.style.display = 'flex';
+                    }
+
+
                 }
             } else {
-                window.close(); // Close if no content
+                window.close();
             }
         };
     </script>
 </head>
 <body>
-    <div id="fallback">
-        <p>Automatic Copy To Clipboard Failed (Do it Manually):</p>
-        <button onclick="copyContent(atob(new URLSearchParams(window.location.search).get('content')))">Copy to Clipboard</button>
-    </div>
+
+<div id="mobile-message" style="display: none;">
+    <p>Automatic copy disabled because you are on a mobile device.</p>
+    <button onclick="copyContent(atob(new URLSearchParams(window.location.search).get('content')))">Copy Text</button>
+</div>
+
+<div id="fallback">
+    <p>Automatic Copy To Clipboard Failed (Do it Manually):</p>
+    <button onclick="copyContent(atob(new URLSearchParams(window.location.search).get('content')))">Copy to Clipboard</button>
+</div>
+
 </body>
 </html>
