@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://vulpesdb.github.io/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <loc>https://vulpesy.vercel.app/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://vulpesdb.github.io/installcd.html</loc>
-    <lastmod>2024-01-16</lastmod>
+    <loc>https://vulpesy.vercel.app/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://vulpesy.vercel.app/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://vulpesy.vercel.app/install.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://vulpesdb.github.io/invite.html</loc>
-    <lastmod>2024-01-16</lastmod>
+    <loc>https://vulpesy.vercel.app/support.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://vulpesy.vercel.app/invite.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://vulpesdb.github.io/privacy.html</loc>
-    <lastmod>2024-01-16</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://vulpesdb.github.io/support.html</loc>
-    <lastmod>2024-01-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vulpesdb.github.io/terms.html</loc>
-    <lastmod>2024-01-16</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://vulpesdb.github.io/donate/</loc>
-    <lastmod>2024-01-16</lastmod>
-    <priority>0.8</priority>
-  </url>
+
 </urlset>
